@@ -444,6 +444,87 @@
     .answer-method div { padding: .85rem; border-radius: 12px; background: #edf3f1; }
     .answer-method strong { display: block; color: var(--brand-dark); }
 
+    .glossary-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: .8rem;
+    }
+    .term {
+      padding: 1rem;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      background: var(--card);
+    }
+    .term dt {
+      color: var(--brand-dark);
+      font-size: 1.1rem;
+      font-weight: 900;
+    }
+    .term dd { margin: .25rem 0 0; color: var(--muted); }
+    .funnel-flow {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: .7rem;
+      margin: 1.25rem 0;
+    }
+    .funnel-step {
+      position: relative;
+      padding: 1rem;
+      border-radius: 14px;
+      background: #edf3f1;
+    }
+    .funnel-step strong { display: block; color: var(--brand-dark); font-size: 1.12rem; }
+    .funnel-step:not(:last-child)::after {
+      content: "→";
+      position: absolute;
+      right: -.62rem;
+      top: 50%;
+      z-index: 1;
+      color: var(--accent);
+      font-weight: 900;
+      transform: translateY(-50%);
+    }
+    .body-map {
+      display: grid;
+      grid-template-columns: minmax(260px, .8fr) minmax(0, 1.2fr);
+      gap: clamp(1rem, 4vw, 3rem);
+      align-items: center;
+      margin-top: 1.5rem;
+      padding: clamp(1rem, 3vw, 2rem);
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      background: var(--card);
+      box-shadow: var(--shadow);
+    }
+    .body-map svg { width: 100%; height: auto; max-height: 680px; }
+    .body-label { font-size: 14px; font-weight: 850; fill: var(--ink); }
+    .body-sub { font-size: 11px; fill: var(--muted); }
+    .body-line { stroke: var(--brand); stroke-width: 2; stroke-dasharray: 4 4; }
+    .body-dot { fill: var(--accent); stroke: white; stroke-width: 3; }
+    .chemical-list { display: grid; gap: .7rem; }
+    .chemical {
+      padding: .85rem 1rem;
+      border-left: 4px solid var(--accent);
+      border-radius: 0 12px 12px 0;
+      background: #fff7f2;
+    }
+    .chemical strong { color: var(--brand-dark); }
+    .science-note {
+      margin-top: 1rem;
+      padding: .9rem 1rem;
+      border-radius: 12px;
+      background: #fff7db;
+      font-size: .92rem;
+    }
+    .brain-compare {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: .8rem;
+      margin: 1rem 0;
+    }
+    .brain-side { padding: 1rem; border-radius: 14px; background: #edf3f1; }
+    .brain-side.right { background: var(--accent-soft); }
+
     .sources { display: grid; grid-template-columns: repeat(2, 1fr); gap: .65rem 1.5rem; padding-left: 1.35rem; }
     .sources li { padding-left: .2rem; }
     .status { font-weight: 850; }
@@ -484,6 +565,14 @@
       .sources { grid-template-columns: 1fr; }
       .scoreboard { grid-template-columns: 1fr; }
       .written-grid, .answer-method { grid-template-columns: 1fr; }
+      .glossary-grid, .funnel-flow, .body-map, .brain-compare { grid-template-columns: 1fr; }
+      .funnel-step:not(:last-child)::after {
+        content: "↓";
+        right: 50%;
+        top: auto;
+        bottom: -.9rem;
+        transform: translateX(50%);
+      }
       .compare { min-width: 620px; }
       .brandmark span:last-child { font-size: .9rem; }
       .hero-actions .btn { width: 100%; }
@@ -512,6 +601,7 @@
       <div class="brandmark"><span>529</span><span>Midterm Guide</span></div>
       <div class="navlinks">
         <a href="#cram">Cram sheet</a>
+        <a href="#glossary">Acronyms & body</a>
         <a href="#audiobook">Audiobook</a>
         <a href="#modules">Deep review</a>
         <a href="#flashcards">Flashcards</a>
@@ -633,9 +723,103 @@
       </div>
     </section>
 
+    <section class="section" id="glossary">
+      <div class="section-head">
+        <p class="eyebrow">02 · Decode the language</p>
+        <h2>Acronyms, funnel stages, and the body</h2>
+        <p>Know what each acronym spells out, what decision it supports, and how the course's brain-and-body metaphors connect to brand strategy.</p>
+      </div>
+
+      <h3>High-frequency acronyms</h3>
+      <dl class="glossary-grid">
+        <div class="term"><dt>CBBE</dt><dd><strong>Customer-Based Brand Equity.</strong> Keller's pyramid for moving from awareness to meaning, response, and resonance.</dd></div>
+        <div class="term"><dt>POP / POD</dt><dd><strong>Point of Parity / Point of Difference.</strong> POP gets considered; POD gets chosen.</dd></div>
+        <div class="term"><dt>OKR</dt><dd><strong>Objectives and Key Results.</strong> Objective = what; key results = measurable how/how much.</dd></div>
+        <div class="term"><dt>SMART</dt><dd><strong>Specific, Measurable, Actionable, Realistic, Time-bound.</strong> The course version of a precise goal test.</dd></div>
+        <div class="term"><dt>CAC</dt><dd><strong>Customer Acquisition Cost.</strong> Acquisition spend divided by customers acquired. Always ask whether it is blended or marginal.</dd></div>
+        <div class="term"><dt>LTV</dt><dd><strong>Lifetime Value.</strong> The economic value a customer contributes across the relationship, not just the first sale.</dd></div>
+        <div class="term"><dt>TOFU / MOFU / BOFU</dt><dd><strong>Top / Middle / Bottom of Funnel.</strong> Awareness, consideration, and decision—not types of food.</dd></div>
+        <div class="term"><dt>UGC</dt><dd><strong>User-Generated Content.</strong> Customer or creator-made content; often a top-of-funnel discovery tool.</dd></div>
+        <div class="term"><dt>CPM</dt><dd><strong>Cost Per Mille.</strong> Price per one thousand impressions or views; “mille” means thousand.</dd></div>
+        <div class="term"><dt>SEO / GEO</dt><dd><strong>Search Engine Optimization / Generative Engine Optimization.</strong> Rank and clicks versus citation and synthesis.</dd></div>
+        <div class="term"><dt>CTR</dt><dd><strong>Click-Through Rate.</strong> Clicks divided by impressions; useful for link-based discovery but incomplete for zero-click AI answers.</dd></div>
+        <div class="term"><dt>PR</dt><dd><strong>Public Relations.</strong> In the course framing, the personal relationships a brand has with its audiences.</dd></div>
+        <div class="term"><dt>ICP</dt><dd><strong>Ideal Customer Profile.</strong> The customer or organization with the strongest fit, need, and relationship potential.</dd></div>
+        <div class="term"><dt>CTA</dt><dd><strong>Call to Action.</strong> The next behavior a message or interface asks the audience to take.</dd></div>
+        <div class="term"><dt>UX / UI</dt><dd><strong>User Experience / User Interface.</strong> The total experience versus the screens and controls used to interact with it.</dd></div>
+        <div class="term"><dt>KPI</dt><dd><strong>Key Performance Indicator.</strong> An ongoing health metric; an OKR is a time-bound change the team is trying to create.</dd></div>
+        <div class="term"><dt>LCA</dt><dd><strong>Life Cycle Assessment.</strong> Measurement of impact across a product's cradle-to-grave life, used in the Allbirds case.</dd></div>
+        <div class="term"><dt>IRL / IVRL</dt><dd><strong>In Real Life / In Virtual Real Life.</strong> Physical and digitally embodied spaces where community experiences happen.</dd></div>
+      </dl>
+
+      <h3 style="margin-top:2rem">The funnel, expanded</h3>
+      <div class="funnel-flow">
+        <div class="funnel-step"><strong>TOFU</strong>Top of Funnel<br><span class="small">Awareness: “I know this exists.” Content, PR, UGC, search, and cultural reach often operate here.</span></div>
+        <div class="funnel-step"><strong>MOFU</strong>Middle of Funnel<br><span class="small">Consideration: “Is this right for me?” Education, proof, comparisons, community, and trials reduce uncertainty.</span></div>
+        <div class="funnel-step"><strong>BOFU</strong>Bottom of Funnel<br><span class="small">Decision: “Will I choose it now?” Clear value, trust, checkout UX, offers, and error prevention help close.</span></div>
+        <div class="funnel-step"><strong>Post-purchase</strong>Retention + advocacy<br><span class="small">“Will I stay, return, and recommend?” Performance, service, loyalty, co-creation, and belonging matter.</span></div>
+      </div>
+      <div class="callout"><strong>The funnel is not perfectly linear.</strong> People move backward, skip stages, consult communities, and re-enter after purchase. The value ladder is different: free content → tripwire → core product → upsell.</div>
+
+      <div class="body-map">
+        <div>
+          <svg viewBox="0 0 520 680" role="img" aria-labelledby="bodyTitle bodyDesc">
+            <title id="bodyTitle">Brain and body map of course storytelling chemicals</title>
+            <desc id="bodyDesc">A human outline showing the brain, pituitary and hypothalamus, adrenal glands, and gut, with labels for cortisol, dopamine, oxytocin, endorphins, and serotonin.</desc>
+            <circle cx="210" cy="78" r="55" fill="#f3dfd1" stroke="#255f56" stroke-width="3"/>
+            <path d="M176 66 Q210 35 244 66 Q255 92 230 110 Q200 122 174 101 Q163 83 176 66Z" fill="#e96d3d" opacity=".72"/>
+            <circle cx="210" cy="91" r="7" class="body-dot"/>
+            <path d="M171 137 Q210 120 249 137 L278 286 Q270 373 245 445 L250 645 L216 645 L207 455 L195 455 L184 645 L150 645 L155 445 Q130 373 142 286Z" fill="#e4f0ed" stroke="#255f56" stroke-width="3"/>
+            <path d="M145 170 L74 340" stroke="#255f56" stroke-width="22" stroke-linecap="round"/>
+            <path d="M275 170 L346 340" stroke="#255f56" stroke-width="22" stroke-linecap="round"/>
+            <ellipse cx="184" cy="314" rx="15" ry="9" fill="#e96d3d"/>
+            <ellipse cx="236" cy="314" rx="15" ry="9" fill="#e96d3d"/>
+            <path d="M178 370 Q210 350 242 370 Q258 404 230 428 Q202 446 175 420 Q160 393 178 370Z" fill="#f4b184" opacity=".8"/>
+            <line x1="164" y1="55" x2="32" y2="34" class="body-line"/>
+            <text x="8" y="20" class="body-label">BRAIN</text>
+            <text x="8" y="38" class="body-sub">dopamine + endorphins</text>
+            <line x1="208" y1="91" x2="354" y2="92" class="body-line"/>
+            <text x="270" y="66" class="body-label">HYPOTHALAMUS / PITUITARY</text>
+            <text x="294" y="84" class="body-sub">oxytocin + endorphins</text>
+            <line x1="236" y1="314" x2="360" y2="292" class="body-line"/>
+            <text x="292" y="264" class="body-label">ADRENAL GLANDS</text>
+            <text x="300" y="282" class="body-sub">cortisol release</text>
+            <line x1="230" y1="394" x2="353" y2="421" class="body-line"/>
+            <text x="300" y="444" class="body-label">GUT</text>
+            <text x="260" y="462" class="body-sub">most body serotonin is produced here</text>
+            <text x="115" y="672" class="body-sub">Simplified production/release map—not a diagnostic anatomy chart</text>
+          </svg>
+        </div>
+        <div>
+          <span class="tag">Storytelling + receptional design</span>
+          <h2>Brain and body trigger map</h2>
+          <div class="chemical-list">
+            <div class="chemical"><strong>Cortisol · tension and attention</strong><br>The hypothalamic-pituitary-adrenal axis signals the adrenal cortex to release cortisol. In the storytelling framework, uncertainty, stakes, or danger can heighten alertness and focus. Too much or prolonged stress can impair trust and memory.</div>
+            <div class="chemical"><strong>Dopamine · anticipation and reward</strong><br>Dopamine pathways arise mainly in the midbrain. Hooks, open loops, progress, surprise, and satisfying reveals can support motivation and reward learning. It is not simply a “pleasure chemical.”</div>
+            <div class="chemical"><strong>Oxytocin · social connection</strong><br>Oxytocin is synthesized in the hypothalamus and released through the posterior pituitary and within the brain. Vulnerability, empathy, trust cues, and human connection are associated with the course's oxytocin framing.</div>
+            <div class="chemical"><strong>Endorphins · pain relief and uplift</strong><br>Endogenous opioids are produced in the central nervous system and pituitary. Humor, movement, and emotional release may contribute to an energized or relieved feeling.</div>
+            <div class="chemical"><strong>Serotonin · regulation and steadiness</strong><br>Most serotonin in the body is made in the gut, while brain serotonin is produced by neurons in the brainstem and does not simply cross in from the gut. The course links serotonin with reduced anxiety and a calmer reception state.</div>
+          </div>
+          <div class="science-note"><strong>Exam-safe wording:</strong> say these story devices are <em>associated with</em> attention, reward, bonding, relief, or regulation. A story does not function like a precise chemical switch, and most of these substances have many roles.</div>
+        </div>
+      </div>
+
+      <div style="margin-top:2rem">
+        <span class="tag">CBBE + Sinek</span>
+        <h2>“Left brain” and “right brain”: course shorthand</h2>
+        <div class="brain-compare">
+          <div class="brain-side"><h3>Course “left” pathway</h3><p><strong>Performance + judgments.</strong> Product utility, quality, price, credibility, consideration, and superiority. This is the logical evidence that helps a customer justify a choice.</p></div>
+          <div class="brain-side right"><h3>Course “right” pathway</h3><p><strong>Imagery + feelings.</strong> Aspiration, symbolism, warmth, fun, excitement, security, social approval, and self-respect. This is the emotional meaning that makes a choice personally relevant.</p></div>
+        </div>
+        <p><strong>How to use it on the exam:</strong> describe these as two complementary brand-building routes—rational and emotional—not as a literal claim that one hemisphere handles all logic and the other all emotion. Real decisions recruit networks across both hemispheres.</p>
+        <p><strong>Connect to Sinek:</strong> his simplified model contrasts the language-and-analysis-oriented <strong>neocortex</strong> with the <strong>limbic system</strong>, associated with emotion, trust, memory, and motivation. The marketing lesson is not “emotion beats logic.” It is that strong brands provide a felt reason to care and a rational reason to believe.</p>
+        <div class="formula">Felt reason to care + rational reason to believe = stronger brand response</div>
+      </div>
+    </section>
+
     <section class="section" aria-labelledby="distinctions-title">
       <div class="section-head">
-        <p class="eyebrow">02 · Know the difference</p>
+        <p class="eyebrow">03 · Know the difference</p>
         <h2 id="distinctions-title">Comparison table</h2>
       </div>
       <div class="table-wrap">
@@ -661,7 +845,7 @@
 
     <section class="section" id="modules">
       <div class="section-head">
-        <p class="eyebrow">03 · Deep review</p>
+        <p class="eyebrow">04 · Deep review</p>
         <h2>Concept modules</h2>
         <p>Open a module when you need the full framework, examples, and likely exam angles.</p>
       </div>
@@ -851,7 +1035,7 @@
 
     <section class="section" id="flashcards">
       <div class="section-head">
-        <p class="eyebrow">04 · Rapid recall</p>
+        <p class="eyebrow">05 · Rapid recall</p>
         <h2>Click-through flashcards</h2>
         <p>All 46 question-and-answer cards from the original peer PDF, now paired with a high-level essay connection. Click once to reveal the answer, then click the answer side to continue. Enter and Space work too.</p>
       </div>
@@ -881,7 +1065,7 @@
 
     <section class="section" id="written-quiz">
       <div class="section-head">
-        <p class="eyebrow">05 · Written-response practice</p>
+        <p class="eyebrow">06 · Written-response practice</p>
         <h2>Essay and short-answer quiz</h2>
         <p>Answer each prompt aloud or on paper before opening it. Strong responses define the framework, explain why it matters, apply it to an example, and connect it to another course concept.</p>
       </div>
@@ -945,7 +1129,7 @@
 
     <section class="section" id="quiz">
       <div class="section-head">
-        <p class="eyebrow">06 · Core-concept retrieval</p>
+        <p class="eyebrow">07 · Core-concept retrieval</p>
         <h2>Interactive concept quiz</h2>
         <p>Questions focus on definitions, mechanisms, distinctions, and applications that support strong written responses. Explanations appear immediately; a fresh set reshuffles the bank.</p>
       </div>
@@ -971,7 +1155,7 @@
 
     <section class="section" id="sources">
       <div class="section-head">
-        <p class="eyebrow">07 · Source map</p>
+        <p class="eyebrow">08 · Source map</p>
         <h2>Course materials</h2>
         <p>The guide prioritizes the supplied sources and peer review sheet. A few private videos could not be independently read, so related course concepts are grounded in the peer notes instead of invented summaries.</p>
       </div>
@@ -1052,7 +1236,14 @@
       {topic:"Attention", q:"Why focus on Super Users?", a:0, c:["They represent disproportionate engagement, adoption, spending, and advocacy","They are the numerical majority","They never multitask","They eliminate the need for segmentation"], e:"A minority can account for an outsized share of valuable behavior."},
       {topic:"Foundations", q:"What is the course currency stack?", a:2, c:["Reach → clicks → sales → profit","Purpose → product → promotion → price","Value → attention → trust → relationship → belonging","Content → community → commerce → conversion"], e:"The stack argues that durable value culminates in relationship and belonging."},
       {topic:"Foundations", q:"What comes after BOFU decision in the course funnel?", a:3, c:["Nothing; the funnel ends","More awareness only","A second TOFU campaign","Retention and advocacy"], e:"Post-purchase experience matters, and the journey is not strictly linear."},
-      {topic:"Foundations", q:"What are the layers of the brand storytelling map?", a:1, c:["Mission → logo → campaign → media → sales","Strategy → architecture → engineering → types → medium","Why → what → who → price → place","Awareness → interest → desire → action → loyalty"], e:"The map moves from strategic intent to meaning, travel mechanics, form, and channel."}
+      {topic:"Foundations", q:"What are the layers of the brand storytelling map?", a:1, c:["Mission → logo → campaign → media → sales","Strategy → architecture → engineering → types → medium","Why → what → who → price → place","Awareness → interest → desire → action → loyalty"], e:"The map moves from strategic intent to meaning, travel mechanics, form, and channel."},
+      {topic:"Acronyms", q:"What does CAC stand for, and what does blended CAC measure?", a:0, c:["Customer Acquisition Cost; total acquisition spend divided by customers acquired","Customer Advocacy Credit; referrals divided by customers","Content Activation Cost; media spend divided by impressions","Customer Account Contribution; revenue divided by accounts"], e:"CAC is Customer Acquisition Cost. Blended CAC summarizes the historical average; marginal CAC asks what the next customer block will cost."},
+      {topic:"Acronyms", q:"Which funnel sequence and job are correctly matched?", a:2, c:["BOFU awareness → TOFU retention → MOFU purchase","MOFU purchase → BOFU awareness → TOFU consideration","TOFU awareness → MOFU consideration → BOFU decision","TOFU decision → MOFU advocacy → BOFU awareness"], e:"Top of Funnel creates awareness, Middle of Funnel supports consideration, and Bottom of Funnel helps a customer decide."},
+      {topic:"Acronyms", q:"What is CPM?", a:1, c:["Customer Profit Margin","Cost per one thousand impressions or views","Clicks per marketing message","Conversion percentage by month"], e:"CPM means Cost Per Mille. Mille is Latin for one thousand."},
+      {topic:"Brain & body", q:"What is the safest way to explain 'left brain vs. right brain' in CBBE?", a:3, c:["Only the left hemisphere evaluates performance","Only the right hemisphere experiences emotion","The hemispheres work independently during brand decisions","It is shorthand for rational and emotional routes; real decisions use networks across both hemispheres"], e:"Use left/right as a course memory aid: performance and judgments versus imagery and feelings. Do not present it as literal hemispheric isolation."},
+      {topic:"Brain & body", q:"Which body mapping is correct?", a:0, c:["Cortisol → adrenal cortex; oxytocin → hypothalamus/posterior pituitary","Dopamine → pancreas; cortisol → gut","Oxytocin → adrenal glands; serotonin → bones","Endorphins → liver only; dopamine → thyroid"], e:"Cortisol is released by the adrenal cortex through the stress axis. Oxytocin is synthesized in the hypothalamus and released through the posterior pituitary and within the brain."},
+      {topic:"Brain & body", q:"Which statement about serotonin is most accurate?", a:2, c:["All serotonin is made in the brain","Gut serotonin freely crosses into the brain","Most body serotonin is made in the gut, while brain serotonin is produced separately in the brainstem","Serotonin only controls happiness"], e:"Most serotonin in the body is produced in the gut, but brain serotonin is produced by brainstem neurons; the two pools are not interchangeable."},
+      {topic:"Story", q:"A suspenseful open loop is most closely associated with which course trigger?", a:1, c:["Oxytocin and social bonding","Cortisol and heightened attention","Serotonin and complete calm","Endorphins and pain relief"], e:"The storytelling framework connects uncertainty and stakes with cortisol and attention. Use 'associated with,' not 'guarantees release.'"}
     ];
 
     const originalFlashcards = [
@@ -1060,7 +1251,7 @@
       {topic:"Tier 1 · CBBE", q:"Point of parity vs. point of difference?", answer:"POP: what makes you the same as competitors—what you need to be considered. POD: what makes you different—the reason to pick you."},
       {topic:"Tier 1 · CBBE", q:"Performance vs. imagery?", answer:"Performance: tangible benefits, utility, quality. Price is part of performance (logical, left side). Imagery: what solving the problem looks like, even if aspirational. When will I appreciate it most? (emotional, right side)."},
       {topic:"Tier 1 · CBBE", q:"Judgments vs. feelings? Name the 6 feelings.", answer:"Judgments: cognitive opinions—quality, credibility, consideration, superiority. Testimonials are judgments. Feelings: emotional—warmth, fun, excitement, security, social approval, self-respect."},
-      {topic:"Tier 1 · CBBE", q:"Left brain vs. right brain in CBBE? Examples?", answer:"Left = logic (performance, judgments). Right = passion (imagery, feelings). Strongest brands use both. North Face leans left. Chanel leans right."},
+      {topic:"Tier 1 · CBBE", q:"Left brain vs. right brain in CBBE? Examples?", answer:"Course shorthand: “left” = the rational route (performance, judgments); “right” = the emotional route (imagery, feelings). Strong brands use both: a felt reason to care plus a rational reason to believe. North Face leans rational; Chanel leans emotional. Exam caveat: this is a memory aid, not literal neuroscience—real decisions use networks across both hemispheres."},
       {topic:"Tier 1 · CBBE", q:"Why do brand collaborations work in CBBE terms?", answer:"They borrow each partner's brand equity and fill a weak part of the pyramid with new imagery. North Face + Gucci works. North Face + Arc'teryx doesn't (no new imagery). Same logic: “the Tesla of eBikes.”"},
       {topic:"Tier 1 · CBBE", q:"What are 5 ways to achieve resonance?", answer:"1. Consistent performance 2. Positive judgments + feelings 3. Brand communities (Harley Owners Group) 4. Co-creation (Nike By You, LEGO Ideas) 5. Align with values + identity."},
       {topic:"Tier 1 · OKRs", q:"What does SMART stand for in Tina's version?", answer:"Specific · Measurable · Actionable · Realistic · Time-bound. Not “achievable/relevant.” Use her version."},
@@ -1078,7 +1269,7 @@
       {topic:"Tier 1 · PR", q:"How do you measure PR? When do you ramp it up?", answer:"Quantitative: reach, impressions, share of voice, message pull-through. Qualitative: business impact, sentiment, resonance, coverage quality, relationship strength. Ramp up in Steve Blank's Customer Creation stage."},
       {topic:"Tier 1 · Community", q:"What is Tina's Truth? Her definition of a brand? The Golden Rule reimagined?", answer:"“Relationships are the only things that matter. Empathy is the only thing that scales.” A brand is what a friend tells a friend. Treat others as they would like to be treated."},
       {topic:"Tier 1 · Community", q:"What are Tina's 5 types of trust?", answer:"Functional: does it work? Transactional: consistently reliable? Moral: ethically sound? Societal: positive impact? Personal: is it relevant?"},
-      {topic:"Tier 1 · Community", q:"What is receptional design? Which 4 brain chemicals?", answer:"Designing for reception, not conception: anticipating the need state and transforming emotion at the moment of engagement. “Automagical” micro-moments, such as auto-fill search. Serotonin (anxiety drops) · dopamine (win) · endorphins (energy) · oxytocin (trusted, loved)."},
+      {topic:"Tier 1 · Community", q:"What is receptional design? Which 4 brain chemicals?", answer:"Designing for reception, not conception: anticipate the need state and transform emotion at engagement. “Automagical” micro-moments include useful autofill. Course associations: serotonin → steadiness/reduced anxiety; dopamine → anticipation/reward; endorphins → uplift/relief; oxytocin → trust/connection. These are simplified associations, not guaranteed chemical switches."},
       {topic:"Tier 1 · Community", q:"What are the pieces of the Loyalty Love Loop?", answer:"Purpose + values · tribe/spotlights · storytelling · receptional design · gamification · IRL/IVRL worlds · network effects · engineering for virality · co-create/collaborate · phygital commerce · loyalty (friends bring friends). Loyalty = an immersive infinity loop."},
       {topic:"Tier 1 · Community", q:"What is the purpose quote? Why network effects?", answer:"“Be a purpose with a company, not a company with a purpose.” (Mainwaring). Network effects are the #1 way to create defensibility: lower acquisition costs and a moat. Davids beat Goliaths, then become Goliaths (NFX)."},
       {topic:"Tier 1 · Virality", q:"What is Tina's virality formula and definition?", answer:"Virality = Identity × Emotion × Participation. It is behavior designed into the experience that people choose to share—not a great ad, big influencer, or paid distribution. Multiplication means one zero kills it."},
@@ -1100,7 +1291,7 @@
       {topic:"Tier 2 · Narrative", q:"Synthesis vs. simulation?", answer:"Synthesis: creating something new from your own taste. Simulation: reusing a proven structure, changing the medium, or borrowing the hook. If stuck: same hook, different body."},
       {topic:"Tier 2 · Story", q:"Name 6 storytelling tools.", answer:"Hook · open loop · callback · rule of three · contrast · make the audience work · signposting · ethos · logos · pathos · pattern interrupt · memorable metaphor · call to action. “Be judicious, like stickers.”"},
       {topic:"Tier 3 · Foundations", q:"What is Tina's currency stack?", answer:"Value → Attention → Trust → Relationship → Belonging. AI commoditizes value; relationship + belonging are what AI can't create."},
-      {topic:"Tier 3 · Foundations", q:"What are the 4 funnel stages + 4 value ladder rungs?", answer:"Funnel: TOFU awareness → MOFU consideration → BOFU decision → post-purchase retention + advocacy. Not linear. Ladder: free content → tripwire → core product → upsell."},
+      {topic:"Tier 3 · Foundations", q:"What are the 4 funnel stages + 4 value ladder rungs?", answer:"Funnel: TOFU (Top of Funnel) = awareness → MOFU (Middle of Funnel) = consideration → BOFU (Bottom of Funnel) = decision → post-purchase retention + advocacy. It is not linear. Value ladder: free content → tripwire (low-risk first purchase) → core product → upsell."},
       {topic:"Tier 3 · Foundations", q:"What are the 5 layers of the brand storytelling map?", answer:"Strategy (who, what to shift) → Architecture (why it matters) → Engineering (why it travels) → Types (what form) → Medium (where it lives)."}
     ];
 
