@@ -153,6 +153,34 @@
     .meter span { display: block; width: 0; height: 100%; background: linear-gradient(90deg, var(--brand), #55a193); transition: width .35s ease; }
     .small { color: var(--muted); font-size: .86rem; }
 
+    .audio-card {
+      display: grid;
+      grid-template-columns: .72fr 1.28fr;
+      gap: clamp(1.25rem, 4vw, 3rem);
+      align-items: center;
+      padding: clamp(1.25rem, 4vw, 2.5rem);
+      border-radius: 24px;
+      color: white;
+      background: linear-gradient(135deg, var(--brand-dark), var(--brand));
+      box-shadow: var(--shadow);
+    }
+    .audio-card h2 { color: white; }
+    .audio-card p { color: rgba(255,255,255,.82); }
+    .audio-card audio { width: 100%; margin: .8rem 0; }
+    .audio-card .btn { border-color: white; color: var(--brand-dark); background: white; }
+    .audio-card .btn:hover { color: white; background: transparent; }
+    .audio-art {
+      display: grid;
+      place-items: center;
+      min-height: 230px;
+      border: 1px solid rgba(255,255,255,.24);
+      border-radius: 18px;
+      background:
+        radial-gradient(circle at center, rgba(233,109,61,.8) 0 12%, transparent 13%),
+        repeating-radial-gradient(circle at center, rgba(255,255,255,.18) 0 3px, transparent 4px 14px);
+      font-size: clamp(3.5rem, 10vw, 7rem);
+    }
+
     .section { padding: 4.5rem 0; }
     .section-head { max-width: 760px; margin-bottom: 2rem; }
     .section-head p { color: var(--muted); font-size: 1.05rem; }
@@ -441,6 +469,8 @@
     @media (max-width: 850px) {
       .hero { min-height: auto; grid-template-columns: 1fr; }
       .hero-panel { transform: none; }
+      .audio-card { grid-template-columns: 1fr; }
+      .audio-art { min-height: 170px; }
       .card, .card.wide { grid-column: span 6; }
       .nav { align-items: flex-start; flex-direction: column; padding: .7rem 0; }
       .navlinks { width: 100%; }
@@ -482,6 +512,7 @@
       <div class="brandmark"><span>529</span><span>Midterm Guide</span></div>
       <div class="navlinks">
         <a href="#cram">Cram sheet</a>
+        <a href="#audiobook">Audiobook</a>
         <a href="#modules">Deep review</a>
         <a href="#flashcards">Flashcards</a>
         <a href="#written-quiz">Written quiz</a>
@@ -499,6 +530,7 @@
         <p class="lede">A mobile-first synthesis of the course readings, videos, slides, and your peer's 46-card review set—organized as concepts, comparisons, applications, flashcards, and quizzes.</p>
         <div class="hero-actions">
           <a class="btn" href="#cram">Start the cram sheet</a>
+          <a class="btn secondary" href="#audiobook">Listen to audiobook</a>
           <a class="btn secondary" href="#quiz">Take a quiz</a>
         </div>
       </div>
@@ -509,6 +541,25 @@
         <div class="meter" aria-hidden="true"><span id="progressBar"></span></div>
         <p class="small">Best sequence: cram sheet → deep review → 10-question quiz → missed topics.</p>
       </aside>
+    </section>
+
+    <section class="section" id="audiobook">
+      <div class="audio-card">
+        <div class="audio-art" aria-hidden="true">▶</div>
+        <div>
+          <p class="eyebrow" style="color:#f8c1aa">Workout audio guide · 26 minutes</p>
+          <h2>Learn while you move</h2>
+          <p>An engaging narrated review of the high-level frameworks, comparisons, applications, and rapid-recall questions. Stream it here or download it for your workout.</p>
+          <audio controls preload="metadata">
+            <source src="IDSN529_workout_audiobook.m4a" type="audio/mp4">
+            Your browser does not support the audio player.
+          </audio>
+          <div class="hero-actions">
+            <a class="btn" href="IDSN529_workout_audiobook.m4a" download>Download audiobook</a>
+            <a class="btn" href="IDSN529_workout_audiobook.txt" download>Download transcript</a>
+          </div>
+        </div>
+      </div>
     </section>
 
     <section class="section" id="cram">
