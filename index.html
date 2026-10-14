@@ -532,6 +532,57 @@
     .brain-side { padding: 1rem; border-radius: 14px; background: #edf3f1; }
     .brain-side.right { background: var(--accent-soft); }
 
+    .identity-map {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: .8rem;
+      margin: 1.25rem 0;
+    }
+    .identity-column {
+      position: relative;
+      padding: 1rem;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      background: var(--card);
+    }
+    .identity-column:nth-child(1) { border-top: 5px solid var(--accent); }
+    .identity-column:nth-child(2) { border-top: 5px solid var(--brand); }
+    .identity-column:nth-child(3) { border-top: 5px solid #7a5fa6; }
+    .identity-column h3 { margin: .35rem 0 .55rem; }
+    .identity-column > p { color: var(--muted); }
+    .identity-column ul { margin-bottom: 0; padding-left: 1.15rem; }
+    .identity-column:not(:last-child)::after {
+      content: "→";
+      position: absolute;
+      top: 50%;
+      right: -.72rem;
+      z-index: 2;
+      display: grid;
+      place-items: center;
+      width: 1.35rem;
+      height: 1.35rem;
+      border-radius: 50%;
+      color: white;
+      background: var(--accent);
+      font-weight: 900;
+      transform: translateY(-50%);
+    }
+    .why-stack {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: .55rem;
+      margin: 1rem 0;
+    }
+    .why-level {
+      padding: .8rem;
+      border-radius: 12px;
+      text-align: center;
+      background: #edf3f1;
+    }
+    .why-level strong { display: block; color: var(--brand-dark); }
+    .why-level:nth-child(2) { background: #e4f0ed; }
+    .why-level:nth-child(3) { background: var(--accent-soft); }
+
     .journey-visual {
       display: grid;
       grid-template-columns: 1.1fr .9fr;
@@ -657,6 +708,14 @@
       .scoreboard { grid-template-columns: 1fr; }
       .written-grid, .answer-method { grid-template-columns: 1fr; }
       .glossary-grid, .funnel-flow, .body-map, .brain-compare { grid-template-columns: 1fr; }
+      .identity-map, .why-stack { grid-template-columns: 1fr; }
+      .identity-column:not(:last-child)::after {
+        content: "↓";
+        top: auto;
+        right: 50%;
+        bottom: -.72rem;
+        transform: translateX(50%);
+      }
       .journey-visual { grid-template-columns: 1fr; }
       .ladder-graphic { min-height: 250px; }
       .ladder-step strong { font-size: .83rem; }
@@ -963,6 +1022,79 @@
               <p><strong>Niche:</strong> audience, territory, context, tension/stakes.</p>
             </div>
           </div>
+          <h3>WHY, Whydentity YOU, and Whydentity THEM</h3>
+          <p>These ideas answer different questions. <strong>WHY</strong> is the belief or cause that gives the brand direction. <strong>Whydentity YOU</strong> makes that belief credible by explaining why this particular brand has the right to pursue it. <strong>Whydentity THEM</strong> makes it relevant by showing how the audience's life or identity changes.</p>
+          <div class="identity-map">
+            <article class="identity-column">
+              <span class="tag">Direction</span>
+              <h3>WHY</h3>
+              <p><strong>Question:</strong> What do we believe, and why should this organization exist beyond making money?</p>
+              <ul>
+                <li>Expresses a cause, conviction, or desired change.</li>
+                <li>Guides choices when tactics or products change.</li>
+                <li>Should be specific enough to exclude some actions.</li>
+                <li>Is not a slogan, product feature, or generic claim such as “make the world better.”</li>
+              </ul>
+            </article>
+            <article class="identity-column">
+              <span class="tag">Credibility</span>
+              <h3>Whydentity YOU</h3>
+              <p><strong>Question:</strong> Why are <em>you</em> the credible brand to pursue this WHY?</p>
+              <ul>
+                <li><strong>Origin:</strong> the event, frustration, or context that started the journey.</li>
+                <li><strong>Obsession:</strong> what the brand studies or cares about beyond normal interest.</li>
+                <li><strong>Beliefs:</strong> convictions that shape decisions and tradeoffs.</li>
+                <li><strong>Mission:</strong> what the brand is actively trying to accomplish now.</li>
+                <li><strong>Archetype:</strong> the recognizable role it plays—guide, rebel, creator, caregiver, explorer, and so on.</li>
+                <li><strong>Proof:</strong> evidence that the story is true: product behavior, expertise, results, sacrifices, or consistent actions.</li>
+              </ul>
+            </article>
+            <article class="identity-column">
+              <span class="tag">Relevance</span>
+              <h3>Whydentity THEM</h3>
+              <p><strong>Question:</strong> Why does this matter to the audience's goals, feelings, and identity?</p>
+              <ul>
+                <li><strong>Functional—do:</strong> What job or outcome do they need? What changes practically?</li>
+                <li><strong>Emotional—feel:</strong> How do they want to feel during or after the experience?</li>
+                <li><strong>Self-expressive—be:</strong> What kind of person do they want to see themselves as—or signal to others?</li>
+                <li>Moves the story from company-centered biography to customer-centered transformation.</li>
+              </ul>
+            </article>
+          </div>
+
+          <h3>Sinek's WHY compared with Whydentity</h3>
+          <div class="why-stack">
+            <div class="why-level"><strong>WHY</strong>Belief or purpose<br><span class="small">The change we care about</span></div>
+            <div class="why-level"><strong>HOW</strong>Principles and distinctive behavior<br><span class="small">How we act on the belief</span></div>
+            <div class="why-level"><strong>WHAT</strong>Products, services, and results<br><span class="small">What the audience can use</span></div>
+          </div>
+          <p>Sinek's Golden Circle explains the direction of communication: purpose before process before product. Whydentity adds narrative depth. YOU supplies the origin, character, and evidence behind the WHY; THEM connects the promise to the audience's functional, emotional, and self-expressive needs.</p>
+
+          <h3>Worked example: Dr. Squatch</h3>
+          <div class="table-wrap">
+            <table class="compare">
+              <thead><tr><th>Layer</th><th>Example interpretation</th><th>Strategic role</th></tr></thead>
+              <tbody>
+                <tr><td><strong>WHY</strong></td><td>Men should not have to settle for generic, harsh personal-care products or an impersonal grooming experience.</td><td>Defines the belief and tension the brand wants to change.</td></tr>
+                <tr><td><strong>Whydentity YOU</strong></td><td>A playful challenger obsessed with natural-feeling products, masculine humor, and rejecting bland mass-market conventions. Product formulation, tone, and consistent character provide proof.</td><td>Makes the challenger story recognizable and credible.</td></tr>
+                <tr><td><strong>Functional THEM</strong></td><td>“Help me get clean with a product that works.”</td><td>Provides the minimum performance benefit.</td></tr>
+                <tr><td><strong>Emotional THEM</strong></td><td>“Help me feel confident, entertained, and understood.”</td><td>Creates feeling beyond utility.</td></tr>
+                <tr><td><strong>Self-expressive THEM</strong></td><td>“Help me feel like the king of the shower—a person with standards and personality.”</td><td>Connects the product to identity and shareable imagery.</td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <h3>How to build the framework</h3>
+          <ol>
+            <li><strong>Start with tension:</strong> identify what is wrong, missing, frustrating, or culturally stale.</li>
+            <li><strong>Write the WHY:</strong> state the belief and the change the brand wants to advance.</li>
+            <li><strong>Build YOU:</strong> document origin, obsession, beliefs, mission, archetype, and proof. Remove claims the brand cannot demonstrate.</li>
+            <li><strong>Build THEM:</strong> interview or observe customers to identify the functional job, desired feeling, and desired identity.</li>
+            <li><strong>Connect the two:</strong> explain how the brand's credible obsession enables the customer's transformation.</li>
+            <li><strong>Express consistently:</strong> align product, voice, visuals, community, content, and customer experience with the same narrative.</li>
+          </ol>
+          <div class="callout"><strong>Common failure:</strong> a brand tells an inspiring founder story but never explains why the customer should care. Another failure is promising an aspirational identity without functional performance or proof. The strongest narrative connects credible YOU to meaningful THEM.</div>
+          <span class="formula">Credible brand identity (YOU) + meaningful customer transformation (THEM) = a narrative people can believe and adopt</span>
           <h3>Applied cases</h3>
           <ul class="two-col">
             <li><strong>Indeed:</strong> mission (“We help people get jobs”) flows into values, accessible visuals, sonic branding, and environmental touchpoints. Identity is more than a logo.</li>
@@ -1425,6 +1557,9 @@
       {topic:"Brand", q:"Which item belongs to CBBE feelings rather than judgments?", a:2, c:["Credibility","Superiority","Security","Consideration"], e:"The six feelings are warmth, fun, excitement, security, social approval, and self-respect."},
       {topic:"Brand", q:"Why can a cross-category brand collaboration strengthen equity?", a:3, c:["It always lowers acquisition cost","It removes the need for brand salience","It makes both products identical","It can borrow equity and add imagery missing from one partner"], e:"The course logic is that a partner fills a weak part of the pyramid with fresh meaning or imagery."},
       {topic:"Narrative", q:"Whydentity THEM is best summarized as:", a:0, c:["Do → feel → be","Origin → obsession → proof","Audience → context → channel","What → how → why"], e:"It moves from functional desire to emotional desire to self-expressive identity."},
+      {topic:"Narrative", q:"What is the clearest difference between a brand's WHY and Whydentity YOU?", a:1, c:["WHY lists products; YOU lists prices","WHY states the belief or desired change; YOU explains why this brand is credible enough to pursue it","WHY describes customers; YOU describes competitors","There is no meaningful difference"], e:"WHY provides direction. Whydentity YOU supplies origin, obsession, beliefs, mission, archetype, and proof that make the purpose credible."},
+      {topic:"Narrative", q:"Which element prevents Whydentity YOU from becoming an unsupported founder story?", a:3, c:["Territory","Page type","Emotional benefit","Proof"], e:"Proof connects the narrative to demonstrated expertise, product behavior, results, sacrifices, or consistent actions."},
+      {topic:"Narrative", q:"A customer says, 'This soap helps me feel like a confident person with standards.' Which Whydentity THEM level is strongest?", a:2, c:["Functional only","Transactional","Self-expressive","Operational"], e:"The statement describes who the customer wants to be. That is the self-expressive level, even though confidence also contains an emotional benefit."},
       {topic:"Brand", q:"Which is broader than a logo, palette, and typography?", a:2, c:["A slogan only","A point of parity","Brand identity across sonic, spatial, behavioral, and visual touchpoints","A paid-media placement"], e:"Indeed illustrates how identity extends into sound, spaces, accessibility, and experience."},
       {topic:"Growth", q:"A 'Collison installation' means:", a:1, c:["Automating onboarding before launch","Personally installing or onboarding the product immediately","Hiring a sales agency","Offering a permanent free plan"], e:"Stripe's founders would take the user's laptop and install the product rather than merely promise a link."},
       {topic:"Growth", q:"What is the Bullseye channel sequence?", a:0, c:["Brainstorm → rank → test → focus","Build → advertise → discount → retain","Segment → position → price → launch","Research → automate → scale → exit"], e:"Test plausible channels cheaply, then double down on the one that demonstrates traction."},
@@ -1510,8 +1645,8 @@
       {topic:"Tier 2 · Growth", q:"What is Bible BFF's 4-step creator playbook + golden rule?", answer:"Recruit (5 creators, new accounts) → warm up → post daily (1–3 videos) → pay on CPM ($2/1K views). Golden rule: make the product the viral feature."},
       {topic:"Tier 2 · Growth", q:"What are Josh's 3 mistakes? Where does UGC sit in the funnel?", answer:"Flat fees before proving a format · big-name bet with no plan (reach ≠ results) · skipping the warm-up (“300-view jail”). UGC = top of funnel. Ads reinforce + close."},
       {topic:"Tier 2 · Narrative", q:"What are Thomas's 6 parts of brand narrative strategy?", answer:"Niche · Whydentity YOU · Whydentity THEM · voice + expression · page type · visual direction (social mood board)."},
-      {topic:"Tier 2 · Narrative", q:"What are the 3 levels of Whydentity THEM (Dr. Squatch)?", answer:"Functional: what I want it to do (get clean). Emotional: how I want to feel (confident). Self-expressive: who I want to be (king of the shower). Do · feel · be."},
-      {topic:"Tier 2 · Narrative", q:"What are the 6 parts of Whydentity YOU? What are the 4 parts of niche?", answer:"YOU: origin · obsession · beliefs · mission · archetype · proof. Niche: audience · territory · context · tension/stakes."},
+      {topic:"Tier 2 · Narrative", q:"What are the 3 levels of Whydentity THEM (Dr. Squatch)?", answer:"Whydentity THEM describes the customer's transformation. Functional—DO: what I need the product to accomplish (get clean). Emotional—FEEL: how I want the experience to make me feel (confident and understood). Self-expressive—BE: who I want to see myself as or signal to others (king of the shower; a person with standards and personality). Strong narratives connect all three instead of stopping at utility."},
+      {topic:"Tier 2 · Narrative", q:"What are the 6 parts of Whydentity YOU? What are the 4 parts of niche?", answer:"Whydentity YOU explains why this brand is credible: origin (what started it) · obsession (what it cares about deeply) · beliefs (convictions and tradeoffs) · mission (what it is doing now) · archetype (the role/character it plays) · proof (evidence the story is true). Niche: audience · territory · context · tension/stakes. YOU must connect to THEM; otherwise it is only a founder biography."},
       {topic:"Tier 2 · Narrative", q:"Synthesis vs. simulation?", answer:"Synthesis: creating something new from your own taste. Simulation: reusing a proven structure, changing the medium, or borrowing the hook. If stuck: same hook, different body."},
       {topic:"Tier 2 · Story", q:"Name 6 storytelling tools.", answer:"Hook · open loop · callback · rule of three · contrast · make the audience work · signposting · ethos · logos · pathos · pattern interrupt · memorable metaphor · call to action. “Be judicious, like stickers.”"},
       {topic:"Tier 3 · Foundations", q:"What is Tina's currency stack?", answer:"Value → Attention → Trust → Relationship → Belonging. AI commoditizes value; relationship + belonging are what AI can't create."},
