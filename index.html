@@ -583,6 +583,44 @@
     .why-level:nth-child(2) { background: #e4f0ed; }
     .why-level:nth-child(3) { background: var(--accent-soft); }
 
+    .reception-flow {
+      display: grid;
+      grid-template-columns: 1fr auto 1fr auto 1fr;
+      gap: .65rem;
+      align-items: stretch;
+      margin: 1.2rem 0;
+    }
+    .reception-state {
+      display: grid;
+      align-content: center;
+      min-height: 155px;
+      padding: 1rem;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      background: var(--card);
+      text-align: center;
+    }
+    .reception-state.before { background: #fff0ee; }
+    .reception-state.moment { color: white; background: var(--brand); }
+    .reception-state.after { background: #e9f7ef; }
+    .reception-state strong { display: block; margin-bottom: .35rem; font-size: 1.05rem; }
+    .reception-arrow { align-self: center; color: var(--accent); font-size: 1.7rem; font-weight: 900; }
+    .reception-examples {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: .75rem;
+      margin: 1rem 0;
+    }
+    .reception-example {
+      padding: 1rem;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      background: var(--card);
+    }
+    .reception-example h4 { margin: .15rem 0 .6rem; color: var(--brand-dark); }
+    .reception-example p { margin: .35rem 0; }
+    .reception-example .shift { color: var(--accent); font-weight: 850; }
+
     .journey-visual {
       display: grid;
       grid-template-columns: 1.1fr .9fr;
@@ -717,6 +755,9 @@
         transform: translateX(50%);
       }
       .journey-visual { grid-template-columns: 1fr; }
+      .reception-flow { grid-template-columns: 1fr; }
+      .reception-arrow { transform: rotate(90deg); justify-self: center; }
+      .reception-examples { grid-template-columns: 1fr; }
       .ladder-graphic { min-height: 250px; }
       .ladder-step strong { font-size: .83rem; }
       .ladder-step span { font-size: .69rem; }
@@ -1262,7 +1303,106 @@
             <li><strong>Play:</strong> centered on a shared interest or hobby.</li>
           </ul>
           <h3>Receptional design</h3>
-          <p>Design for how an experience is received in a user's need state, not only how its creator conceives it. “Automagical” micro-moments can transform emotion: serotonin (anxiety falls), dopamine (reward), endorphins (energy), oxytocin (trust/love).</p>
+          <p><strong>Receptional design means designing for the experience as the customer receives it in a particular moment—not only for what the creator intended to deliver.</strong> The same feature or message can feel helpful, confusing, reassuring, intrusive, exciting, or manipulative depending on the person's need state, expectations, context, and emotion.</p>
+          <div class="callout"><strong>Simple memory cue:</strong> conception asks, “What did we make?” Reception asks, “What is happening for this person when it reaches them—and what should change because of it?”</div>
+
+          <div class="reception-flow" aria-label="Receptional design before, moment, and after model">
+            <div class="reception-state before"><div><strong>1 · BEFORE</strong>User's need state<br><span class="small">What are they trying to do? What do they know, fear, expect, or feel?</span></div></div>
+            <div class="reception-arrow" aria-hidden="true">→</div>
+            <div class="reception-state moment"><div><strong>2 · MOMENT</strong>Designed reception<br><span class="small" style="color:rgba(255,255,255,.8)">What cue, interaction, or response meets that need at the right time?</span></div></div>
+            <div class="reception-arrow" aria-hidden="true">→</div>
+            <div class="reception-state after"><div><strong>3 · AFTER</strong>Desired transformation<br><span class="small">What can they now do, understand, trust, or feel that they could not before?</span></div></div>
+          </div>
+          <span class="formula">Receptional design = need state + right micro-moment + useful emotional/behavioral shift</span>
+
+          <h3>What is a need state?</h3>
+          <p>A need state is the combination of the customer's goal and condition at a specific moment. It is more precise than a demographic persona. The same person may have different need states during discovery, checkout, first use, a service failure, or community participation.</p>
+          <ul>
+            <li><strong>Functional:</strong> What are they trying to accomplish right now?</li>
+            <li><strong>Cognitive:</strong> What do they understand, and what is unclear?</li>
+            <li><strong>Emotional:</strong> Are they anxious, skeptical, curious, frustrated, excited, or overwhelmed?</li>
+            <li><strong>Social:</strong> Do they need privacy, approval, recognition, safety, or belonging?</li>
+            <li><strong>Contextual:</strong> Are they rushed, mobile, distracted, new, returning, or recovering from an error?</li>
+          </ul>
+
+          <h3>Concrete examples</h3>
+          <div class="reception-examples">
+            <article class="reception-example">
+              <h4>Search autocomplete</h4>
+              <p><strong>Before:</strong> “I know what I need, but not the exact term.”</p>
+              <p><strong>Moment:</strong> relevant suggestions appear as the person types.</p>
+              <p class="shift">Shift: uncertainty → orientation and momentum.</p>
+            </article>
+            <article class="reception-example">
+              <h4>Checkout</h4>
+              <p><strong>Before:</strong> “I want this, but I am afraid of making a payment or shipping mistake.”</p>
+              <p><strong>Moment:</strong> autofill, familiar payment methods, visible totals, inline validation, and confirmation.</p>
+              <p class="shift">Shift: anxiety → clarity, control, and trust.</p>
+            </article>
+            <article class="reception-example">
+              <h4>First-time onboarding</h4>
+              <p><strong>Before:</strong> “This product looks powerful, but I do not know where to begin.”</p>
+              <p><strong>Moment:</strong> one guided first action, useful defaults, and visible progress—not a tour of every feature.</p>
+              <p class="shift">Shift: overwhelm → competence and a small win.</p>
+            </article>
+            <article class="reception-example">
+              <h4>Community welcome</h4>
+              <p><strong>Before:</strong> “I am new here and do not know whether I belong.”</p>
+              <p><strong>Moment:</strong> a human welcome, clear norms, a low-risk participation ritual, and recognition of the first contribution.</p>
+              <p class="shift">Shift: outsider uncertainty → safety and belonging.</p>
+            </article>
+            <article class="reception-example">
+              <h4>Service failure</h4>
+              <p><strong>Before:</strong> “The brand failed me, and I expect defensiveness or delay.”</p>
+              <p><strong>Moment:</strong> acknowledge the problem, preserve context, give a clear next step, and offer appropriate repair.</p>
+              <p class="shift">Shift: frustration → being heard and regaining control.</p>
+            </article>
+            <article class="reception-example">
+              <h4>Content or story</h4>
+              <p><strong>Before:</strong> “I do not yet see why this matters to me.”</p>
+              <p><strong>Moment:</strong> a relatable tension, human vulnerability, useful insight, and a clear role for the audience.</p>
+              <p class="shift">Shift: indifference → attention, empathy, or motivation.</p>
+            </article>
+          </div>
+
+          <h3>Why “automagical”?</h3>
+          <p>An automagical moment feels almost effortless because the brand anticipates a legitimate need and responds at the right time. The “magic” is not decoration or hidden manipulation; it comes from good research, sensible defaults, retained context, responsive service, and removal of unnecessary work. Good anticipation feels helpful. Bad anticipation feels invasive, especially when it uses unexplained data or removes meaningful choice.</p>
+
+          <h3>How to design receptionally</h3>
+          <ol>
+            <li><strong>Choose a moment:</strong> map a specific touchpoint such as discovery, signup, payment, first use, error, renewal, or community entry.</li>
+            <li><strong>Observe the need state:</strong> use interviews, behavioral evidence, support logs, journey data, or direct observation. Do not guess only from demographics.</li>
+            <li><strong>Name the before state:</strong> write what the person is trying to do and what friction or emotion is present.</li>
+            <li><strong>Define the after state:</strong> specify the useful change—understanding, confidence, relief, progress, trust, or belonging.</li>
+            <li><strong>Design the smallest helpful moment:</strong> remove friction, provide a cue, preserve context, personalize appropriately, or create a small win.</li>
+            <li><strong>Check ethics and autonomy:</strong> is the experience transparent, reversible, respectful, and genuinely in the customer's interest?</li>
+            <li><strong>Measure reception:</strong> combine behavior such as completion or error rate with qualitative evidence such as confidence, clarity, sentiment, and trust.</li>
+          </ol>
+
+          <h3>Receptional design vs. ordinary UX</h3>
+          <div class="table-wrap">
+            <table class="compare">
+              <thead><tr><th>Question</th><th>Traditional usability emphasis</th><th>Receptional-design emphasis</th></tr></thead>
+              <tbody>
+                <tr><td>Can the person complete it?</td><td>Task success, speed, errors, accessibility.</td><td>All of those still matter.</td></tr>
+                <tr><td>How does the moment land?</td><td>May be treated as secondary.</td><td>Central: expectations, emotion, trust, dignity, and context.</td></tr>
+                <tr><td>What is the goal?</td><td>Reduce interface friction.</td><td>Create a useful shift in capability, understanding, feeling, or relationship.</td></tr>
+                <tr><td>What counts as success?</td><td>Completion or conversion.</td><td>Completion plus the quality and ethics of the experience received.</td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <h3>What receptional design is not</h3>
+          <ul>
+            <li><strong>Not delight everywhere:</strong> confetti during a billing error would ignore the need state.</li>
+            <li><strong>Not removing all friction:</strong> confirmation friction can prevent costly mistakes; reflection friction can support informed consent.</li>
+            <li><strong>Not manipulation:</strong> false urgency and dark patterns optimize company outcomes by working against the user's interest.</li>
+            <li><strong>Not just aesthetics:</strong> attractive screens do not repair unclear expectations, broken service, or lack of control.</li>
+            <li><strong>Not a literal chemical switch:</strong> the course's serotonin, dopamine, endorphin, and oxytocin labels are simplified associations with regulation, reward, uplift, and connection—not guaranteed reactions.</li>
+          </ul>
+
+          <h3>Course chemical memory aid</h3>
+          <p>The course connects receptional moments to four simplified emotional associations: <strong>serotonin</strong> with steadiness or reduced anxiety, <strong>dopamine</strong> with anticipation and reward, <strong>endorphins</strong> with uplift or relief, and <strong>oxytocin</strong> with trust and connection. Use “associated with,” not “causes.” The strategic question is the human shift—not which chemical a button supposedly releases.</p>
           <p><strong>Loyalty Love Loop ingredients:</strong> purpose and values, tribe/spotlights, storytelling, receptional design, gamification, IRL/virtual worlds, network effects, engineered sharing, co-creation, phygital commerce, and advocacy.</p>
           <h3>Ethical conversion</h3>
           <p>Master entry and exit points: align landing-page promise, load quickly, clarify one value proposition, show the CTA, reduce checkout friction, support autofill and familiar payment methods.</p>
@@ -1575,6 +1715,9 @@
       {topic:"PR", q:"Which PR metric is qualitative?", a:3, c:["Impressions","Reach","Share of voice","Relationship strength"], e:"Relationship strength, sentiment, resonance, quality, and business impact complement quantitative exposure metrics."},
       {topic:"Community", q:"Which is a community of practice?", a:1, c:["A support group for one software product","A group centered on improving a shared discipline","Fans gathered around a hobby only","A paid retargeting audience"], e:"Practice communities organize around developing a craft, independent of one product."},
       {topic:"Community", q:"What is receptional design?", a:0, c:["Designing for the user's need state and emotional reception","Designing only the creator's intended message","Eliminating all friction regardless of ethics","Using reception desks as brand media"], e:"It shifts focus from conception to the way the experience is received in context."},
+      {topic:"Experience", q:"Which sequence best represents receptional design?", a:2, c:["Brand goal → promotion → conversion","Persona → demographic → advertisement","Before need state → designed micro-moment → useful after state","Feature list → visual polish → launch"], e:"Receptional design begins with the person's current state, designs the right moment, and defines the useful behavioral or emotional transformation."},
+      {topic:"Experience", q:"Why might adding confirmation friction be good receptional design?", a:1, c:["All friction increases conversion","It can protect a user from a costly or irreversible mistake","It guarantees dopamine release","It makes an interface feel more complex"], e:"Receptional design does not remove all friction. Purposeful confirmation can support control, informed choice, and error prevention."},
+      {topic:"Experience", q:"What makes an 'automagical' moment ethical rather than invasive?", a:3, c:["The company hides how it works","It maximizes time on site","It removes every choice","It anticipates a legitimate need transparently while preserving control"], e:"Helpful anticipation comes from context and research, but it should remain transparent, reversible, and aligned with the user's interest."},
       {topic:"Conversion", q:"Which tactic is an ethical conversion lever?", a:2, c:["A fake countdown timer","False before-and-after pricing","Transparent social proof","Manufactured stock scarcity"], e:"Social proof can reduce uncertainty without deceiving the customer."},
       {topic:"Conversion", q:"The UX trifecta in the Google conversion reading is:", a:1, c:["Speed, scarcity, surprise","Clarity, consistency, error prevention","Color, contrast, animation","Reach, relevance, repetition"], e:"These three reduce cognitive friction throughout the journey."},
       {topic:"Virality", q:"Why is the virality formula multiplicative?", a:3, c:["Every campaign needs paid reach","Shares always grow exponentially","Algorithms require three hashtags","A zero in identity, emotion, or participation can collapse sharing"], e:"The formula emphasizes that every factor must be present, not merely added."},
@@ -1628,7 +1771,7 @@
       {topic:"Tier 1 · PR", q:"How do you measure PR? When do you ramp it up?", answer:"Quantitative: reach, impressions, share of voice, message pull-through. Qualitative: business impact, sentiment, resonance, coverage quality, relationship strength. Ramp up in Steve Blank's Customer Creation stage."},
       {topic:"Tier 1 · Community", q:"What is Tina's Truth? Her definition of a brand? The Golden Rule reimagined?", answer:"“Relationships are the only things that matter. Empathy is the only thing that scales.” A brand is what a friend tells a friend. Treat others as they would like to be treated."},
       {topic:"Tier 1 · Community", q:"What are Tina's 5 types of trust?", answer:"Functional: does it work? Transactional: consistently reliable? Moral: ethically sound? Societal: positive impact? Personal: is it relevant?"},
-      {topic:"Tier 1 · Community", q:"What is receptional design? Which 4 brain chemicals?", answer:"Designing for reception, not conception: anticipate the need state and transform emotion at engagement. “Automagical” micro-moments include useful autofill. Course associations: serotonin → steadiness/reduced anxiety; dopamine → anticipation/reward; endorphins → uplift/relief; oxytocin → trust/connection. These are simplified associations, not guaranteed chemical switches."},
+      {topic:"Tier 1 · Community", q:"What is receptional design? Which 4 brain chemicals?", answer:"Receptional design means designing for how an experience lands in a person's specific need state—not only what the creator intended. Use the sequence: BEFORE (goal, context, friction, emotion) → MOMENT (the smallest timely, helpful interaction) → AFTER (a useful shift in understanding, capability, confidence, trust, or belonging). “Automagical” examples include relevant autocomplete, useful defaults, preserved context, and clear error recovery. Course associations: serotonin → steadiness/reduced anxiety; dopamine → anticipation/reward; endorphins → uplift/relief; oxytocin → trust/connection. These are memory aids, not guaranteed chemical switches."},
       {topic:"Tier 1 · Community", q:"What are the pieces of the Loyalty Love Loop?", answer:"Purpose + values · tribe/spotlights · storytelling · receptional design · gamification · IRL/IVRL worlds · network effects · engineering for virality · co-create/collaborate · phygital commerce · loyalty (friends bring friends). Loyalty = an immersive infinity loop."},
       {topic:"Tier 1 · Community", q:"What is the purpose quote? Why network effects?", answer:"“Be a purpose with a company, not a company with a purpose.” (Mainwaring). Network effects are the #1 way to create defensibility: lower acquisition costs and a moat. Davids beat Goliaths, then become Goliaths (NFX)."},
       {topic:"Tier 1 · Virality", q:"What is Tina's virality formula and definition?", answer:"Virality = Identity × Emotion × Participation. It is behavior designed into the experience that people choose to share—not a great ad, big influencer, or paid distribution. Multiplication means one zero kills it."},
