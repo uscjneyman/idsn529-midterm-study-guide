@@ -525,6 +525,90 @@
     .brain-side { padding: 1rem; border-radius: 14px; background: #edf3f1; }
     .brain-side.right { background: var(--accent-soft); }
 
+    .journey-visual {
+      display: grid;
+      grid-template-columns: 1.1fr .9fr;
+      gap: 1.25rem;
+      margin: 1.5rem 0;
+      padding: clamp(1rem, 3vw, 1.5rem);
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      background: #f8f5ef;
+    }
+    .journey-visual h4 { margin: 0 0 .8rem; color: var(--brand-dark); font-size: 1rem; text-align: center; }
+    .funnel-graphic { display: grid; justify-items: center; gap: .45rem; }
+    .funnel-band {
+      display: grid;
+      place-items: center;
+      min-height: 4.2rem;
+      padding: .55rem 1rem;
+      color: white;
+      text-align: center;
+      box-shadow: 0 6px 12px rgba(21, 62, 57, .1);
+    }
+    .funnel-band strong, .ladder-step strong { display: block; font-size: 1.08rem; }
+    .funnel-band span, .ladder-step span { font-size: .78rem; opacity: .9; }
+    .funnel-band.tofu {
+      width: 100%;
+      background: #255f56;
+      clip-path: polygon(0 0, 100% 0, 92% 100%, 8% 100%);
+    }
+    .funnel-band.mofu {
+      width: 78%;
+      background: #337d70;
+      clip-path: polygon(0 0, 100% 0, 90% 100%, 10% 100%);
+    }
+    .funnel-band.bofu {
+      width: 56%;
+      background: #4d9b8d;
+      clip-path: polygon(0 0, 100% 0, 87% 100%, 13% 100%);
+    }
+    .loyalty-loop {
+      width: 64%;
+      padding: .7rem;
+      border: 2px dashed var(--accent);
+      border-radius: 999px;
+      color: var(--brand-dark);
+      background: white;
+      font-size: .84rem;
+      font-weight: 850;
+      text-align: center;
+    }
+    .loop-arrow { color: var(--accent); font-size: 1.25rem; font-weight: 900; line-height: 1; }
+    .ladder-graphic {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      align-items: end;
+      gap: .4rem;
+      min-height: 300px;
+      padding-top: 1rem;
+    }
+    .ladder-step {
+      display: grid;
+      align-content: center;
+      min-width: 0;
+      padding: .6rem .35rem;
+      border-radius: 10px 10px 0 0;
+      color: white;
+      background: var(--brand);
+      text-align: center;
+    }
+    .ladder-step:nth-child(1) { min-height: 25%; background: #7ab6aa; }
+    .ladder-step:nth-child(2) { min-height: 45%; background: #55a193; }
+    .ladder-step:nth-child(3) { min-height: 70%; background: #337d70; }
+    .ladder-step:nth-child(4) { min-height: 100%; background: #153e39; }
+    .visual-key {
+      grid-column: 1 / -1;
+      display: flex;
+      justify-content: center;
+      gap: 1.2rem;
+      padding-top: .25rem;
+      color: var(--muted);
+      font-size: .82rem;
+      text-align: center;
+    }
+    .visual-key strong { color: var(--ink); }
+
     .sources { display: grid; grid-template-columns: repeat(2, 1fr); gap: .65rem 1.5rem; padding-left: 1.35rem; }
     .sources li { padding-left: .2rem; }
     .status { font-weight: 850; }
@@ -566,6 +650,10 @@
       .scoreboard { grid-template-columns: 1fr; }
       .written-grid, .answer-method { grid-template-columns: 1fr; }
       .glossary-grid, .funnel-flow, .body-map, .brain-compare { grid-template-columns: 1fr; }
+      .journey-visual { grid-template-columns: 1fr; }
+      .ladder-graphic { min-height: 250px; }
+      .ladder-step strong { font-size: .83rem; }
+      .ladder-step span { font-size: .69rem; }
       .funnel-step:not(:last-child)::after {
         content: "↓";
         right: 50%;
@@ -910,6 +998,28 @@
             <li><strong>Upsell:</strong> a higher-value extension, premium tier, add-on, or deeper solution for an existing customer.</li>
           </ol>
           <p><strong>Connection:</strong> TOFU content may introduce free value; a MOFU or BOFU prospect may accept a tripwire; the core product closes the central need; and post-purchase trust can make an upsell relevant. Do not force every person through every rung.</p>
+          <figure class="journey-visual" aria-labelledby="funnel-visual-title">
+            <div>
+              <h4 id="funnel-visual-title">Marketing funnel: the decision journey narrows</h4>
+              <div class="funnel-graphic">
+                <div class="funnel-band tofu"><div><strong>TOFU · Awareness</strong><span>Many people discover the problem, category, or brand</span></div></div>
+                <div class="funnel-band mofu"><div><strong>MOFU · Consideration</strong><span>Interested people compare, learn, and build trust</span></div></div>
+                <div class="funnel-band bofu"><div><strong>BOFU · Decision</strong><span>Qualified prospects choose—or do not</span></div></div>
+                <div class="loop-arrow" aria-hidden="true">↓ ↺</div>
+                <div class="loyalty-loop">Retention → repeat purchase → advocacy → new TOFU awareness</div>
+              </div>
+            </div>
+            <div>
+              <h4>Value ladder: value and commitment rise</h4>
+              <div class="ladder-graphic">
+                <div class="ladder-step"><div><strong>Free</strong><span>content</span></div></div>
+                <div class="ladder-step"><div><strong>Tripwire</strong><span>first purchase</span></div></div>
+                <div class="ladder-step"><div><strong>Core</strong><span>main solution</span></div></div>
+                <div class="ladder-step"><div><strong>Upsell</strong><span>deeper value</span></div></div>
+              </div>
+            </div>
+            <figcaption class="visual-key"><span><strong>Funnel:</strong> where the customer is in deciding</span><span><strong>Ladder:</strong> what level of value the brand offers</span></figcaption>
+          </figure>
           <div class="exam-hook"><strong>Application prompt:</strong> If average CAC is low but the next cohort is expensive and churn is high, recommend a marginal-CAC test plus a loyalty intervention.</div>
         </div>
       </details>
