@@ -640,6 +640,23 @@
     .reception-example p { margin: .35rem 0; }
     .reception-example .shift { color: var(--accent); font-weight: 850; }
 
+    .fight-framework {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: .8rem;
+      margin: 1.2rem 0;
+    }
+    .fight-card {
+      padding: 1rem;
+      border-radius: 14px;
+      color: white;
+      background: var(--brand);
+    }
+    .fight-card:nth-child(2) { background: #337d70; }
+    .fight-card:nth-child(3) { background: var(--accent); }
+    .fight-card strong { display: block; margin-bottom: .35rem; font-size: 1.12rem; }
+    .fight-card p { margin: .35rem 0; color: rgba(255,255,255,.86); }
+
     .journey-visual {
       display: grid;
       grid-template-columns: 1.1fr .9fr;
@@ -777,6 +794,7 @@
       .reception-flow { grid-template-columns: 1fr; }
       .reception-arrow { transform: rotate(90deg); justify-self: center; }
       .reception-examples { grid-template-columns: 1fr; }
+      .fight-framework { grid-template-columns: 1fr; }
       .ladder-graphic { min-height: 250px; }
       .ladder-step strong { font-size: .83rem; }
       .ladder-step span { font-size: .69rem; }
@@ -908,6 +926,13 @@
           <h3>Early customers</h3>
           <p>Do things that don't scale: recruit manually, install personally, delight intensely, learn quickly.</p>
           <p><strong>Collison installation:</strong> don't send the signup link—take the laptop and install the product now.</p>
+        </article>
+        <article class="card">
+          <span class="tag">Modern B2B</span>
+          <h3>Pain → belonging → tribe</h3>
+          <p><strong>Sell the painkiller:</strong> lead with the urgent customer problem, not a software feature list.</p>
+          <p><strong>Prove you belong:</strong> speak the audience's language and respect its craft.</p>
+          <p><strong>Pick a fight:</strong> oppose a stale convention or old way to create a clear point of view and attract the right tribe.</p>
         </article>
         <article class="card">
           <span class="tag">AI discovery</span>
@@ -1265,6 +1290,65 @@
       </details>
 
       <details class="module">
+        <summary>Modern B2B startup marketing: pain, belonging, and a fight</summary>
+        <div class="module-body">
+          <p class="source-note"><strong>Source status:</strong> This section is grounded in the provided 96-second audio overview, “Why Modern B2B Marketing Picks Fights.” It summarizes the unavailable Elisa Shreiber startup-marketing video, but it is not a verbatim transcript of that original video.</p>
+          <h3>Core thesis</h3>
+          <p>Modern business-to-business marketing cannot rely only on dry specifications, jargon, or a feature list. A buyer still needs rational proof, but attention often begins with an immediate emotional connection. The overview compares B2B positioning to a dating profile: the audience decides quickly whether the brand understands its world and is worth further attention.</p>
+          <div class="fight-framework">
+            <article class="fight-card"><strong>1 · Sell the painkiller</strong><p>Lead with the urgent problem and lived frustration, not the software category or technical architecture.</p></article>
+            <article class="fight-card"><strong>2 · Prove you belong</strong><p>Use the audience's exact language, anxieties, standards, and craft knowledge to earn cultural credibility.</p></article>
+            <article class="fight-card"><strong>3 · Pick a fight</strong><p>Reject a stale convention, incumbent, or identity to create tension, self-selection, and a more committed tribe.</p></article>
+          </div>
+
+          <h3>1. Sell the painkiller, not the software</h3>
+          <p>Customers rarely wake up wanting a new software category. They want an expensive, stressful, risky, or repetitive problem to disappear. Pain-first marketing translates product capability into an urgent customer outcome.</p>
+          <ul>
+            <li><strong>Weak opening:</strong> “Our AI observability platform uses advanced automation.”</li>
+            <li><strong>Pain-first opening:</strong> “Stop losing sleep to repeated on-call interruptions and unresolved incidents.”</li>
+            <li><strong>Why it works:</strong> the second message begins inside the customer's need state and gives attention a reason to form.</li>
+            <li><strong>Course connection:</strong> this is Whydentity THEM at the functional and emotional levels—solve the job and relieve the feeling around it.</li>
+          </ul>
+          <p><strong>Resolve AI example:</strong> according to the overview, the company replaced technical jargon with a funny, chaotic meme-style video about the nightmare of being interrupted while on call. The content dramatized the pain before presenting the solution and reportedly generated strong inbound interest.</p>
+
+          <h3>2. Prove that you belong in the audience's world</h3>
+          <p>Once the brand has named the pain, it must show that it genuinely understands the people experiencing it. Using surface-level slang is not enough. Credibility comes from demonstrating respect for the audience's craft, standards, tradeoffs, fears, and vocabulary.</p>
+          <ul>
+            <li><strong>Language:</strong> use the terms customers use when talking to one another—not only internal product language.</li>
+            <li><strong>Craft fluency:</strong> show that the brand understands what quality means to the profession.</li>
+            <li><strong>Anxiety:</strong> address the audience's real fear, including what the new technology might threaten.</li>
+            <li><strong>Proof:</strong> demonstrate knowledge through useful analysis, product behavior, experts, or credible participation in the community.</li>
+          </ul>
+          <p><strong>Runway example:</strong> the overview says Runway responded to filmmakers' anxiety about AI by publishing a detailed video about lighting and cinematography rather than merely promoting features. The message was, in effect, “we respect and understand your craft,” which builds trust before asking for adoption.</p>
+
+          <h3>3. Pick a fight and define the tribe</h3>
+          <p>A strongly positioned brand often clarifies what it opposes. The “enemy” may be an old process, stale convention, incumbent business model, harmful assumption, or professional identity the target customer wants to leave behind. This creates narrative tension and helps the right audience self-select.</p>
+          <ul>
+            <li><strong>Operand:</strong> its “kill McKinsey” positioning names the incumbent model it wants AI-enabled work to replace.</li>
+            <li><strong>Anduril:</strong> the overview describes a recruiting advertisement telling traditional corporate workers not to apply; it reports that applications increased by 30 percent because the exclusion sharpened the identity of the people who <em>did</em> want to join.</li>
+            <li><strong>Course connection:</strong> conflict/sides is a viral mechanic; a defined enemy creates identity, emotion, participation, and tribal loyalty.</li>
+            <li><strong>Positioning effect:</strong> exclusion can strengthen POD by making it obvious who the brand is for and what it refuses to become.</li>
+          </ul>
+
+          <h3>Why polarization can work</h3>
+          <p>A neutral message tries to offend no one and may become memorable to no one. A clear point of view can increase attention, word of mouth, and belonging because supporters know what choosing the brand says about them. The strategy intentionally trades universal appeal for stronger identification among a narrower audience.</p>
+          <div class="callout"><strong>But “pick a fight” does not mean manufacture random outrage.</strong> The conflict should expose a real customer tension, align with the product, and target an idea, process, or powerful convention—not demean vulnerable people. Without product proof, polarization becomes a stunt.</div>
+
+          <h3>How the three moves work together</h3>
+          <ol>
+            <li><strong>Pain earns attention:</strong> “You understand the problem hurting me.”</li>
+            <li><strong>Language earns trust:</strong> “You understand my world and respect my standards.”</li>
+            <li><strong>The fight earns identity:</strong> “Choosing you says what I believe and which tribe I belong to.”</li>
+          </ol>
+          <span class="formula">Specific pain + cultural fluency + meaningful opposition = an emotionally distinctive B2B position</span>
+
+          <h3>Exam-ready evaluation</h3>
+          <p>A strong response should not argue that emotion replaces product evidence. Pain and polarization earn attention, but performance, credibility, and proof still move the buyer through consideration and decision. In CBBE terms, modern B2B marketing adds imagery and feelings to performance and judgments. In funnel terms, bold content can create TOFU awareness, but MOFU and BOFU still require demonstrations, cases, trust, and economic value.</p>
+          <div class="exam-hook"><strong>Application prompt:</strong> Choose a boring B2B product. State the pain it kills, the audience language that proves belonging, and the outdated convention it could credibly oppose.</div>
+        </div>
+      </details>
+
+      <details class="module">
         <summary>OKRs: alignment, measurement, and impact</summary>
         <div class="module-body">
           <div class="grid">
@@ -1501,11 +1585,11 @@
       <div class="section-head">
         <p class="eyebrow">05 · Rapid recall</p>
         <h2>Click-through flashcards</h2>
-        <p>All 46 question-and-answer cards from the original peer PDF, now paired with a high-level essay connection. Click once to reveal the answer, then click the answer side to continue. Enter and Space work too.</p>
+        <p>All 46 question-and-answer cards from the original peer PDF plus 3 supplemental cards from the modern B2B audio overview. Click once to reveal the answer, then click the answer side to continue. Enter and Space work too.</p>
       </div>
       <div class="flashcard-shell">
         <div class="flashcard-toolbar">
-          <strong id="flashcardCounter" aria-live="polite">Card 1 of 46</strong>
+          <strong id="flashcardCounter" aria-live="polite">Card 1 of 49</strong>
           <button class="btn secondary" id="shuffleFlashcards" type="button">Shuffle deck</button>
         </div>
         <div class="flashcard-stage">
@@ -1660,6 +1744,16 @@
             <h4>Talking points</h4><ul><li>Do not prescribe more awareness when salience is already high.</li><li>Diagnose meaning, response, and relationship in CBBE.</li><li>Use content to clarify POD, performance, imagery, and values.</li><li>Use community and co-creation to create belonging and a moat.</li><li>Set an outcome OKR around retention, repeat purchase, participation, or advocacy.</li><li>Combine lead behaviors with lag results; avoid reach-only vanity metrics.</li><li>Connect the plan to value → attention → trust → relationship → belonging.</li></ul>
           </div>
         </details>
+        <details class="written-card">
+          <summary><span class="tag">Modern B2B</span><h3>Evaluate the claim that modern B2B startup marketing should sell pain, speak the tribe's language, and pick a fight.</h3><p class="prompt-hint"><strong>Hint:</strong> Explain what each move contributes—attention, trust, and identity—then state when polarization becomes empty or harmful.</p></summary>
+          <div class="written-answer">
+            <h4>Answer outline</h4>
+            <ol class="answer-outline"><li>State why feature-first B2B messaging often fails to create attention.</li><li>Explain pain-first positioning and connect it to customer need state.</li><li>Explain cultural fluency and proof of belonging.</li><li>Explain how meaningful opposition creates tension, POD, and tribal identity.</li><li>Apply Resolve AI, Runway, Operand, or Anduril.</li><li>Evaluate limits: product proof, ethics, audience size, and the risk of manufactured outrage.</li></ol>
+            <h4>Sample response</h4>
+            <p class="sample-response">The framework argues that modern B2B marketing must create emotional relevance before asking buyers to evaluate technical proof. Selling the painkiller means leading with the urgent customer problem rather than a software category. Resolve AI's on-call video, as described in the provided overview, dramatized interruption pain instead of opening with jargon. Speaking the tribe's language then proves that the brand belongs in the audience's world. Runway's discussion of lighting and cinematography demonstrated respect for filmmakers' craft and anxiety about AI. Finally, picking a fight defines what the brand opposes, creating narrative tension and self-selection. Operand's “kill McKinsey” position is memorable because it names the incumbent model it wants to replace. However, polarization is not automatically good strategy. The enemy should be a real convention or problem, the product must provide proof, and the message should not attack vulnerable people. Emotion earns attention, but performance and credibility still close a B2B decision.</p>
+            <h4>Talking points</h4><ul><li>Pain earns attention; audience language earns trust; opposition earns identity.</li><li>Connect pain-first messaging to Whydentity THEM and receptional design.</li><li>Connect craft fluency to judgments, credibility, and community belonging.</li><li>Connect picking sides to POD, narrative tension, and virality.</li><li>Examples: Resolve AI, Runway, Operand, Anduril.</li><li>Limits: proof, ethics, relevance, audience tradeoff, and false controversy.</li></ul>
+          </div>
+        </details>
       </div>
     </section>
 
@@ -1696,7 +1790,7 @@
         <p>The guide prioritizes the supplied sources and peer review sheet. A few private videos could not be independently read, so related course concepts are grounded in the peer notes instead of invented summaries.</p>
       </div>
       <div class="source-note">
-        <strong>Access note:</strong> Drive videos “Elisa Shreiber Modern Startup Mktg” and “Engineering 4 Virality” did not expose transcripts. The final YouTube link currently resolves to an unrelated English-learning podcast. The private “SEO Is Dead” Drive PDF also could not be read. Re-share those files directly if you want a revised guide with their exact contents.
+        <strong>Access note:</strong> The original Drive video “Elisa Shreiber Modern Startup Mktg” did not expose a transcript, but a user-provided audio overview titled “Why Modern B2B Marketing Picks Fights” was transcribed and analyzed for this guide. It is treated as a secondary overview, not a verbatim transcript of the original. “Engineering 4 Virality” still has no accessible transcript. The final YouTube link resolves to an unrelated English-learning podcast.
       </div>
       <ol class="sources">
         <li><a href="https://a16z.com/geo-over-seo/">a16z: GEO over SEO</a></li>
@@ -1721,7 +1815,7 @@
         <li><a href="https://www.thedrum.com/opinion/synthetic-audiences-are-changing-how-brands-make-decisions">The Drum: Synthetic audiences</a></li>
         <li><a href="https://digiday.com/media/wtf-are-synthetic-audiences/">Digiday: Synthetic audiences</a></li>
         <li><a href="https://drive.google.com/file/d/1Hu2o6EsggicWsr2q4b66TqgumP3WFJhw/view">Activate Technology & Media Outlook</a></li>
-        <li><a href="https://drive.google.com/file/d/1AjEyJZCbd9G7Tj6USJzlx8hOEypTyutM/view">Startup marketing video <span class="status warn">(no transcript)</span></a></li>
+        <li><a href="https://drive.google.com/file/d/1AjEyJZCbd9G7Tj6USJzlx8hOEypTyutM/view">Startup marketing video</a> <span class="status">(provided audio overview analyzed)</span></li>
         <li><a href="https://www.youtube.com/watch?v=u4ZoJKF_VuA">Simon Sinek: Start With Why</a></li>
         <li><a href="https://drive.google.com/file/d/1NlFfrvdaLp0ekubzLgod2H5EO0qGNI-a/view">ACC Gen Alpha report</a></li>
         <li><a href="https://drive.google.com/file/d/1YJ9rgTkfDOn6Ltb4z6v40jTKqnI_Y9or/view">Engineering for Virality <span class="status warn">(no transcript)</span></a></li>
@@ -1743,6 +1837,10 @@
       {topic:"Narrative", q:"What is the clearest difference between a brand's WHY and Whydentity YOU?", a:1, c:["WHY lists products; YOU lists prices","WHY states the belief or desired change; YOU explains why this brand is credible enough to pursue it","WHY describes customers; YOU describes competitors","There is no meaningful difference"], e:"WHY provides direction. Whydentity YOU supplies origin, obsession, beliefs, mission, archetype, and proof that make the purpose credible."},
       {topic:"Narrative", q:"Which element prevents Whydentity YOU from becoming an unsupported founder story?", a:3, c:["Territory","Page type","Emotional benefit","Proof"], e:"Proof connects the narrative to demonstrated expertise, product behavior, results, sacrifices, or consistent actions."},
       {topic:"Narrative", q:"A customer says, 'This soap helps me feel like a confident person with standards.' Which Whydentity THEM level is strongest?", a:2, c:["Functional only","Transactional","Self-expressive","Operational"], e:"The statement describes who the customer wants to be. That is the self-expressive level, even though confidence also contains an emotional benefit."},
+      {topic:"Modern B2B", q:"What does 'sell the painkiller, not the software' mean?", a:0, c:["Lead with the urgent customer problem and desired relief before product jargon","Hide the product until after purchase","Market only to healthcare companies","Use fear without offering proof"], e:"Pain-first positioning begins in the customer's need state. The product still needs evidence, but the opening message explains why the problem matters now."},
+      {topic:"Modern B2B", q:"Why did the overview highlight Runway's content about lighting and cinematography?", a:2, c:["It made the software cheaper","It attacked filmmakers who opposed AI","It demonstrated respect for and fluency in the filmmaking craft","It replaced the need for product performance"], e:"Speaking the audience's language is more than slang. Craft fluency shows that the brand understands the community's standards and anxieties."},
+      {topic:"Modern B2B", q:"What is the strategic purpose of 'picking a fight'?", a:1, c:["Create controversy unrelated to the product","Define meaningful opposition so the right audience can self-select into a tribe","Appeal equally to every buyer","Eliminate the need for a point of difference"], e:"A credible enemy—such as an outdated process or incumbent model—creates tension, identity, and a sharper POD."},
+      {topic:"Modern B2B", q:"When does polarizing B2B marketing become weak strategy?", a:3, c:["When it excludes any audience at all","When it uses emotion","When it names an outdated convention","When the conflict is manufactured, unethical, or unsupported by product proof"], e:"Polarization should arise from a real customer tension and credible product position. Random outrage may create attention without trust or durable value."},
       {topic:"Brand", q:"Which is broader than a logo, palette, and typography?", a:2, c:["A slogan only","A point of parity","Brand identity across sonic, spatial, behavioral, and visual touchpoints","A paid-media placement"], e:"Indeed illustrates how identity extends into sound, spaces, accessibility, and experience."},
       {topic:"Growth", q:"A 'Collison installation' means:", a:1, c:["Automating onboarding before launch","Personally installing or onboarding the product immediately","Hiring a sales agency","Offering a permanent free plan"], e:"Stripe's founders would take the user's laptop and install the product rather than merely promise a link."},
       {topic:"Growth", q:"What is the Bullseye channel sequence?", a:0, c:["Brainstorm → rank → test → focus","Build → advertise → discount → retain","Segment → position → price → launch","Research → automate → scale → exit"], e:"Test plausible channels cheaply, then double down on the one that demonstrates traction."},
@@ -1840,6 +1938,12 @@
       {topic:"Tier 3 · Foundations", q:"What are the 5 layers of the brand storytelling map?", answer:"Strategy (who, what to shift) → Architecture (why it matters) → Engineering (why it travels) → Types (what form) → Medium (where it lives)."}
     ];
 
+    const supplementalFlashcards = [
+      {topic:"Supplement · Modern B2B", q:"What are the 3 moves in the modern B2B startup-marketing overview?", answer:"1. Sell the painkiller: lead with an urgent customer problem rather than product jargon. 2. Prove you belong: speak the audience's language and demonstrate respect for its craft. 3. Pick a fight: oppose a meaningful convention, incumbent, or old identity so the right tribe can self-select."},
+      {topic:"Supplement · Modern B2B", q:"Why does 'speaking the audience's language' build trust?", answer:"It demonstrates cultural and craft fluency: the brand understands the audience's vocabulary, standards, anxieties, and tradeoffs. Runway's content about lighting and cinematography showed filmmakers that it respected their craft instead of merely promoting AI features."},
+      {topic:"Supplement · Modern B2B", q:"When is 'picking a fight' useful—and when is it only a stunt?", answer:"It is useful when the brand credibly opposes a real problem, stale convention, incumbent model, or identity the target audience wants to leave behind. That creates tension, POD, and tribe. It is a stunt when the conflict is random, unethical, unrelated to the product, or unsupported by evidence and performance."}
+    ];
+
     const state = { selected: [], correct: 0, answered: 0 };
     const flashcardState = { deck: [], index: 0, flipped: false };
     const els = {
@@ -1873,6 +1977,7 @@
         "Synthetic": "Essay connection: treat simulated responses as directional hypotheses, document their evidence, and validate important decisions with real people.",
         "Personas": "Essay connection: connect situation, motivation, behavior, and barriers to sharper positioning and more relevant experience design.",
         "Growth": "Essay connection: explain the tradeoff between manual learning, scalable acquisition, marginal economics, and durable loyalty.",
+        "Modern B2B": "Essay connection: show how pain earns attention, cultural fluency earns trust, and meaningful opposition creates identity—then evaluate the need for proof and ethical limits.",
         "Narrative": "Essay connection: show how brand origin and belief connect to what the audience wants to do, feel, and become.",
         "Story": "Essay connection: explain how narrative tools create attention and meaning, then connect them to a specific strategic objective.",
         "Foundations": "Essay connection: use this framework to connect value creation with attention, trust, conversion, retention, and advocacy."
@@ -1907,7 +2012,7 @@
     }
 
     function shuffleFlashcards() {
-      flashcardState.deck = shuffled(originalFlashcards);
+      flashcardState.deck = shuffled([...originalFlashcards, ...supplementalFlashcards]);
       flashcardState.index = 0;
       renderFlashcard();
     }
